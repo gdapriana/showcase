@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import SmoothScroller from "@/app/(root)/_components/smooth-scroller";
 import { Toaster } from "sonner";
-// import TransitionProvider from "@/providers/transition-provider";
+import TransitionProvider from "@/providers/transition-provider";
+import { Suspense } from "react";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -23,9 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${dmSans.className} antialiased`}>
-        <SmoothScroller />
-        {/* <TransitionProvider>{children}</TransitionProvider> */}
-        {children}
+        <Suspense fallback={null}>
+          <SmoothScroller />
+        </Suspense>
+        <TransitionProvider>{children}</TransitionProvider>
         <Toaster position="bottom-center" />
       </body>
     </html>

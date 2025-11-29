@@ -13,8 +13,6 @@ export default async function Layout({ children }: { children: ReactNode }) {
     <main>
       <Navbar logo={user?.properties.logo.files[0].file?.url} />
       {children}
-
-      <div className="h-[200vh]"></div>
     </main>
   );
 }

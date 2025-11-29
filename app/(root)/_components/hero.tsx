@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Hero({ user }: { user?: NotionPageResponse | null }) {
   const { scrollYProgress } = useScroll();
-  const [isImageError, setIsImageError] = useState<boolean>(true);
+  const [isImageError, setIsImageError] = useState<boolean>(false);
   const dynamicWidth = useTransform(scrollYProgress, [0, 1], ["15rem", "40rem"]);
 
   return (
