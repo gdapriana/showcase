@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import SmoothScroller from "@/app/(root)/_components/smooth-scroller";
 import { Toaster } from "sonner";
-import TransitionProvider from "@/providers/transition-provider";
+// import TransitionProvider from "@/providers/transition-provider";
 
 const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["100", "200", "400", "600", "800"],
 });
 
 export const metadata: Metadata = {
@@ -22,9 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${dmSans.variable} antialiased`}>
+      <body className={`${dmSans.className} antialiased`}>
         <SmoothScroller />
-        <TransitionProvider>{children}</TransitionProvider>
+        {/* <TransitionProvider>{children}</TransitionProvider> */}
+        {children}
         <Toaster position="bottom-center" />
       </body>
     </html>

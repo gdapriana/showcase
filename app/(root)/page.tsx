@@ -3,7 +3,6 @@ import { ProfileRequest } from "@/utils/requests/profile.request";
 import { notFound } from "next/navigation";
 import { NotionPageResponse } from "@/utils/types/notionPage.type";
 import BookCall from "@/app/(root)/_components/book-call/book-call";
-import { NotionDatabaseQueryResponse } from "@/utils/types/notionDatabaseQuery.type";
 import { SkillRequest } from "@/utils/requests/skill.request";
 import { Suspense } from "react";
 import CurrentProject from "@/app/(root)/_components/current-project/current-project";
