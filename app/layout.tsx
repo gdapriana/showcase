@@ -1,9 +1,9 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import SmoothScroller from "@/app/(root)/_components/smooth-scroller";
-import "./globals.css";
-import Providers from "@/app/providers";
 import { Toaster } from "sonner";
+import TransitionProvider from "@/providers/transition-provider";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${dmSans.variable} antialiased`}>
         <SmoothScroller />
-        <Providers>{children}</Providers>
+        <TransitionProvider>{children}</TransitionProvider>
         <Toaster position="bottom-center" />
       </body>
     </html>
