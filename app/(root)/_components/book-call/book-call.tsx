@@ -27,7 +27,7 @@ export default function BookCall({ skills }: { skills?: NotionPage[] }) {
           transition={{ duration: 2, ease: ease }}
           className="max-w-[800px] opacity-0 py-24 relative w-full flex flex-col gap-2 justify-center items-center"
         >
-          <h2 className="text-3xl text-center capitalize md:leading-14 md:text-5xl font-bold tracking-[-1px]">Websites that guide users, build trust and convert</h2>
+          <h2 className="text-3xl text-center capitalize md:leading-14 md:text-5xl font-bold md:tracking-[-3px] tracking-[-1px]">Websites that guide users, build trust and convert</h2>
           <p className="text-md text-muted-foreground text-center">So your site builds trust, shows real traction and drives growth without confusing visitors or feeling unfinished</p>
 
           <TextParalax cursorActive={{ value: cursorActive, setValue: setCursorActive }} skills={skills} />

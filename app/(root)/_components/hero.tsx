@@ -36,7 +36,7 @@ export default function Hero({ user }: { user?: NotionPageResponse | null }) {
               className="w-full grayscale h-full object-cover"
             />
           )}
-          <div className="flex absolute left-0 gap-1 top-[20%] flex-col justify-start items-start">
+          <div className="flex absolute left-0 gap-1 md:top-[20%] top-[5%] flex-col justify-start items-start">
             <motion.span animate={{ opacity: [0, 1] }} transition={{ duration: 1, ease: ease, delay: 2 }} className="text-background mix-blend-difference">
               {user?.properties.username.title[0].text.content}
             </motion.span>
@@ -48,7 +48,7 @@ export default function Hero({ user }: { user?: NotionPageResponse | null }) {
               {user?.properties.tags.multi_select[0].name}
             </motion.h1>
           </div>
-          <div className="flex absolute right-0 gap-1 bottom-[20%] flex-col justify-start items-end">
+          <div className="flex absolute right-0 gap-1 bottom-[5%] md:bottom-[20%] flex-col justify-start items-end">
             <motion.h1
               animate={{ y: [50, 0], opacity: [0, 1] }}
               transition={{ duration: 2, ease: ease, delay: 1 }}

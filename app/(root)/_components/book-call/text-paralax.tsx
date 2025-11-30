@@ -85,7 +85,7 @@ export default function TextParalax({ skills, cursorActive }: { skills?: NotionP
     <div
       onMouseEnter={() => cursorActive?.setValue(true)}
       onMouseLeave={() => cursorActive?.setValue(false)}
-      className="w-full relative mask-[linear-gradient(to_right,transparent,black_40%,black_60%,transparent)] mask-no-repeat my-12 overflow-hidden"
+      className="w-full cursor-none relative mask-[linear-gradient(to_right,transparent,black_40%,black_60%,transparent)] mask-no-repeat my-12 overflow-hidden"
     >
       <ParallaxText baseVelocity={3} skills={skills} />
     </div>

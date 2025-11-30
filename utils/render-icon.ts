@@ -1,7 +1,8 @@
 import { IconType } from "react-icons";
-import { FaHtml5, FaCss3, FaJs, FaSass, FaPython } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaSass, FaPython, FaFigma } from "react-icons/fa";
 import { RiTailwindCssFill, RiNotionFill, RiNextjsFill } from "react-icons/ri";
-import { SiFramer, SiExpress, SiTensorflow } from "react-icons/si";
+import { SiFramer, SiExpress, SiTensorflow, SiMiro, SiIntellijidea, SiNeovim } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 export const iconMap: Record<string, IconType> = {
   FaHtml5,
@@ -15,4 +16,9 @@ export const iconMap: Record<string, IconType> = {
   SiExpress,
   FaPython,
   SiTensorflow,
+  SiMiro,
+  VscVscode,
+  SiIntellijidea,
+  FaFigma,
+  SiNeovim,
 };

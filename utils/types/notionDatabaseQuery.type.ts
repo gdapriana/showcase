@@ -174,6 +174,13 @@ export interface MessagePageProperties {
   name: TitlePropertyValue;
 }
 
+export interface ToolPageProperties {
+  name: TitlePropertyValue;
+  icon: RichTextPropertyValue;
+  description: RichTextPropertyValue;
+  username: RelationPropertyValue;
+}
+
 export interface NotionPage {
   object: "page";
   id: string;
@@ -192,12 +199,10 @@ export interface NotionPage {
   archived: boolean;
   in_trash: boolean;
   is_locked: boolean;
-  properties: SkillPageProperties | ProjectPageProperties;
+  properties: SkillPageProperties | ProjectPageProperties | ToolPageProperties;
   url: string;
   public_url: string | null;
 }
-
-// --- Main Database Query Response Type ---
 
 export interface NotionDatabaseQueryResponse {
   object: "list";
