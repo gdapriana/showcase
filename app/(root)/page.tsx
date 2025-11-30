@@ -10,6 +10,7 @@ import { ProjectRequest } from "@/utils/requests/project.request";
 import MessageForm from "@/app/(root)/_components/message-form/message-form";
 import { ToolRequest } from "@/utils/requests/tool.request";
 import Tools from "@/app/(root)/_components/tools/tools";
+import MediaSocials from "@/app/(root)/_components/media-socials.tsx/media-socials";
 
 export default async function Home() {
   const user: NotionPageResponse | null = await ProfileRequest.GET();
@@ -35,6 +36,8 @@ export default async function Home() {
       <Suspense key={tools?.request_id}>
         <Tools tools={tools?.results} />
       </Suspense>
+
+      <MediaSocials />
 
       <MessageForm />
     </div>

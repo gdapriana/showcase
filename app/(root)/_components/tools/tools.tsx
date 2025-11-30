@@ -1,17 +1,14 @@
 "use client";
 import CustomCursor from "@/app/(root)/_components/tools/custom-cursor";
-import { NotionPage, ToolPageProperties } from "@/utils/types/notionDatabaseQuery.type";
+import { NotionPage } from "@/utils/types/notionDatabaseQuery.type";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ease } from "@/utils/helpers";
-import { cn } from "@/lib/utils";
 import ToolCard from "@/app/(root)/_components/tools/tool-card";
 
 export default function Tools({ tools }: { tools?: NotionPage[] }) {
   const ref = useRef(null);
-
-  console.log({ tools });
 
   const [cursorActive, setCursorActive] = useState(false);
 
@@ -31,7 +28,7 @@ export default function Tools({ tools }: { tools?: NotionPage[] }) {
           <h2 className="text-3xl text-center capitalize md:leading-14 md:text-5xl font-bold md:tracking-[-3px] tracking-[-1px]">The Tools Behind the Craft</h2>
           <p className="text-md text-muted-foreground text-center">Design, planning, and coding tools I work with.</p>
           <div onMouseEnter={() => setCursorActive(true)} onMouseLeave={() => setCursorActive(false)} className="grid cursor-none grid-cols-2 md:grid-cols-3 gap-2 w-full mt-12">
-            {tools && tools.map((tool: NotionPage) => <ToolCard tool={tool} key={tool.id} />)}
+            {tools && tools.map((tool: NotionPage, index: number) => <ToolCard index={index} tool={tool} key={tool.id} />)}
           </div>
         </motion.div>
       </motion.main>
