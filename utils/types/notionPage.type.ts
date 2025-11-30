@@ -86,6 +86,12 @@ interface MultiSelectPropertyValue {
   multi_select: MultiSelectOption[];
 }
 
+interface NumberPropertyValue {
+  id: string;
+  type: "number";
+  number: number | null;
+}
+
 interface FilesPropertyValue {
   id: string;
   type: "files";
@@ -94,12 +100,7 @@ interface FilesPropertyValue {
 
 // --- Union Type for all possible Property Values observed in the response ---
 
-type PagePropertyValue =
-  | RichTextPropertyValue
-  | TitlePropertyValue
-  | FormulaNumberValue
-  | MultiSelectPropertyValue
-  | FilesPropertyValue;
+type PagePropertyValue = RichTextPropertyValue | TitlePropertyValue | FormulaNumberValue | MultiSelectPropertyValue | FilesPropertyValue;
 
 // --- Properties Object Type ---
 
@@ -123,6 +124,7 @@ interface PageProperties {
   phone_number: RichTextPropertyValue;
   username: TitlePropertyValue;
   logo: FilesPropertyValue;
+  experience: NumberPropertyValue;
 }
 
 // --- Main Page Object Type ---

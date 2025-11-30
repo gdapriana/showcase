@@ -24,7 +24,7 @@ export default function ProjectCard({ project, index }: { project?: NotionPage; 
       ref={ref}
       onMouseEnter={() => setMouseEnter(true)}
       onMouseLeave={() => setMouseEnter(false)}
-      className="break-inside-avoid mb-1 flex overflow-hidden relative"
+      className="break-inside-avoid mb-2 flex overflow-hidden relative"
     >
       {project && "deploy_url" in project.properties && project.properties.deploy_url.files[0]?.external?.url && (
         <motion.a

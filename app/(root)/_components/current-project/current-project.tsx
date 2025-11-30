@@ -27,7 +27,7 @@ export default function CurrentProject({ projects }: { projects?: NotionPage[] }
             </Button>
           </header>
 
-          <div onMouseEnter={() => setCursorActive(true)} onMouseLeave={() => setCursorActive(false)} className="columns-2 md:columns-3 gap-x-1 gap-y-1 ">
+          <div onMouseEnter={() => setCursorActive(true)} onMouseLeave={() => setCursorActive(false)} className="columns-2 md:columns-3 gap-x-2 gap-y-2 ">
             {projects && projects.map((project: NotionPage, index: number) => <ProjectCard index={index} project={project} key={project.id} />)}
           </div>
         </div>

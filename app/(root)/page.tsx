@@ -11,6 +11,7 @@ import MessageForm from "@/app/(root)/_components/message-form/message-form";
 import { ToolRequest } from "@/utils/requests/tool.request";
 import Tools from "@/app/(root)/_components/tools/tools";
 import MediaSocials from "@/app/(root)/_components/media-socials.tsx/media-socials";
+import { SocialRequest } from "@/utils/requests/social.request";
 
 export default async function Home() {
   const user: NotionPageResponse | null = await ProfileRequest.GET();
@@ -19,7 +20,7 @@ export default async function Home() {
     return notFound();
   }
 
-  const [skills, projects, tools] = await Promise.all([SkillRequest.GETS(), ProjectRequest.GETS(), ToolRequest.GETS()]);
+  const [skills, projects, tools, socials] = await Promise.all([SkillRequest.GETS(), ProjectRequest.GETS(), ToolRequest.GETS(), SocialRequest.GETS()]);
 
   return (
     <div>
@@ -32,13 +33,12 @@ export default async function Home() {
       <Suspense key={projects?.request_id}>
         <CurrentProject projects={projects?.results} />
       </Suspense>
-
       <Suspense key={tools?.request_id}>
         <Tools tools={tools?.results} />
       </Suspense>
-
-      <MediaSocials />
-
+      <Suspense key={socials?.request_id}>
+        <MediaSocials socials={socials?.results} />
+      </Suspense>
       <MessageForm />
     </div>
   );

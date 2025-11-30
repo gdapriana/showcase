@@ -180,6 +180,12 @@ export interface ToolPageProperties {
   description: RichTextPropertyValue;
   username: RelationPropertyValue;
 }
+export interface SocialPageProperties {
+  name: TitlePropertyValue;
+  icon: RichTextPropertyValue;
+  url: UrlPropertyValue;
+  username: RelationPropertyValue;
+}
 
 export interface NotionPage {
   object: "page";
@@ -199,7 +205,7 @@ export interface NotionPage {
   archived: boolean;
   in_trash: boolean;
   is_locked: boolean;
-  properties: SkillPageProperties | ProjectPageProperties | ToolPageProperties;
+  properties: SkillPageProperties | ProjectPageProperties | ToolPageProperties | SocialPageProperties;
   url: string;
   public_url: string | null;
 }

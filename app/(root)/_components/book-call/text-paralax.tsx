@@ -50,7 +50,7 @@ function ParallaxText({ skills, baseVelocity = 100 }: ParallaxProps) {
 
   return (
     <div className="parallax">
-      <motion.div className="scroller flex flex-nowrap whitespace-nowrap gap-16" style={{ x }}>
+      <motion.div className="scroller flex flex-nowrap whitespace-nowrap gap-10" style={{ x }}>
         {skills &&
           skills.map((skill: NotionPage) => (
             <SkillCard key={skill.id} title={skill.properties.name.title[0].text.content} icon={skill && "icon" in skill.properties ? skill.properties.icon.rich_text[0].text.content : undefined} />
@@ -87,7 +87,7 @@ export default function TextParalax({ skills, cursorActive }: { skills?: NotionP
       onMouseLeave={() => cursorActive?.setValue(false)}
       className="w-full cursor-none relative mask-[linear-gradient(to_right,transparent,black_40%,black_60%,transparent)] mask-no-repeat my-12 overflow-hidden"
     >
-      <ParallaxText baseVelocity={3} skills={skills} />
+      <ParallaxText baseVelocity={10} skills={skills} />
     </div>
   );
 }
