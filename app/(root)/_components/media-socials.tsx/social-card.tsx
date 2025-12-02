@@ -10,7 +10,7 @@ export default function SocialCard({ social }: { social?: NotionPage }) {
       href={(social && social.properties && "url" in social.properties && social.properties.url.url) || "#"}
       className="flex p-8 border-muted-foreground/10 border-[0.5px] group justify-center items-center"
     >
-      <Icon size={20} className="text-muted-foreground transition duration-500 w-8 h-8 group-hover:text-background" />
+      <Icon size={20} className="text-muted-foreground transition duration-500 w-8 h-8 group-hover:text-background dark:group-hover:text-primary" />
     </a>
   );
 }

@@ -16,34 +16,27 @@ export default function Hero({ user }: { user?: NotionPageResponse | null }) {
       <div className="max-w-[800px] relative w-full flex justify-center items-center">
         <motion.div style={{ width: dynamicWidth }} className="aspect-9/16 bg-primary">
           {isImageError ? (
-            <Image
-              src={"https://images.unsplash.com/photo-1762446093300-44cdc84337eb?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-              alt="profile"
-              width={400}
-              height={400}
-              className="w-full grayscale h-full object-cover"
-            />
+            <Image src={"/profile-image.jpg"} alt="profile" width={400} height={400} loading="lazy" unoptimized className="w-full grayscale h-full object-cover" />
           ) : (
             <Image
               onError={() => setIsImageError(true)}
-              src={
-                user?.properties.profile_img.files[0].file?.url ||
-                "https://images.unsplash.com/photo-1762446093300-44cdc84337eb?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              src={user?.properties.profile_img.files[0].file?.url || "/profile-image.jpg"}
               alt="profile"
+              loading="lazy"
               width={400}
               height={400}
+              unoptimized
               className="w-full grayscale h-full object-cover"
             />
           )}
           <div className="flex absolute left-0 gap-1 md:top-[20%] top-[5%] flex-col justify-start items-start">
-            <motion.span animate={{ opacity: [0, 1] }} transition={{ duration: 1, ease: ease, delay: 2 }} className="text-background mix-blend-difference">
+            <motion.span animate={{ opacity: [0, 1] }} transition={{ duration: 1, ease: ease, delay: 2 }} className="text-background dark:text-primary mix-blend-difference">
               {user?.properties.username.title[0].text.content}
             </motion.span>
             <motion.h1
               animate={{ y: [50, 0], opacity: [0, 1] }}
               transition={{ duration: 2, ease: ease, delay: 1 }}
-              className="text-3xl md:tracking-[-4px] relative uppercase md:text-5xl overflow-hidden font-black mix-blend-difference text-background"
+              className="text-3xl md:tracking-[-4px] relative uppercase md:text-5xl overflow-hidden font-black mix-blend-difference text-background dark:text-primary"
             >
               {user?.properties.tags.multi_select[0].name}
             </motion.h1>
@@ -52,11 +45,11 @@ export default function Hero({ user }: { user?: NotionPageResponse | null }) {
             <motion.h1
               animate={{ y: [50, 0], opacity: [0, 1] }}
               transition={{ duration: 2, ease: ease, delay: 1 }}
-              className="text-3xl md:tracking-[-4px] text-end uppercase md:text-5xl font-black mix-blend-difference text-background"
+              className="text-3xl md:tracking-[-4px] text-end uppercase md:text-5xl font-black mix-blend-difference dark:text-primary text-background"
             >
               {user?.properties.tags.multi_select[3].name}
             </motion.h1>
-            <motion.span animate={{ opacity: [0, 1] }} transition={{ duration: 1, ease: ease, delay: 2 }} className="text-background mix-blend-difference">
+            <motion.span animate={{ opacity: [0, 1] }} transition={{ duration: 1, ease: ease, delay: 2 }} className="text-background dark:text-primary mix-blend-difference">
               Based in {user?.properties.province.rich_text[0].text.content}, {user?.properties.country.rich_text[0].text.content}
             </motion.span>
           </div>

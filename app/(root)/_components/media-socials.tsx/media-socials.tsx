@@ -59,19 +59,19 @@ export default function MediaSocials({ socials }: { socials?: NotionPage[] }) {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative" id="social">
       <CustomCursor isActive={cursorActive} />
       <main className="w-full px-4 relative flex flex-col justify-center items-center">
-        <div ref={containerRef} className="max-w-[800px] bg-primary rounded-2xl md:p-16 p-10 relative w-full flex flex-col gap-2 justify-center items-center">
+        <div ref={containerRef} className="max-w-[800px] bg-primary dark:bg-background dark:border-[0.5px] rounded-2xl md:p-16 p-10 relative w-full flex flex-col gap-2 justify-center items-center">
           <h2 ref={textRef} className="text-3xl md:text-3xl font-bold tracking-[-2px] text-background">
             Great collaborations begin with a message. Feel free to reach out through the channels below — I’m always open to new conversations.
           </h2>
 
           <div onMouseEnter={() => setCursorActive(true)} onMouseLeave={() => setCursorActive(false)} className="grid w-full mt-8 relative grid-cols-2 md:grid-cols-3">
-            <div className="absolute z-20 left-0 top-0 w-[0.5px] h-full bg-primary"></div>
-            <div className="absolute z-20 right-0 top-0 w-[0.5px] h-full bg-primary"></div>
-            <div className="absolute z-20 left-0 top-0 h-[0.5px] w-full bg-primary"></div>
-            <div className="absolute z-20 left-0 bottom-0 h-[0.5px] w-full bg-primary"></div>
+            <div className="absolute z-20 left-0 top-0 w-[0.5px] h-full bg-primary dark:bg-background"></div>
+            <div className="absolute z-20 right-0 top-0 w-[0.5px] h-full bg-primary dark:bg-background"></div>
+            <div className="absolute z-20 left-0 top-0 h-[0.5px] w-full bg-primary dark:bg-background"></div>
+            <div className="absolute z-20 left-0 bottom-0 h-[0.5px] w-full bg-primary dark:bg-background"></div>
             {socials && socials.map((social: NotionPage) => <SocialCard key={social.id} social={social} />)}
           </div>
         </div>

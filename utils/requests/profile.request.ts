@@ -15,6 +15,7 @@ export class ProfileRequest {
           "Content-Type": "application/json",
           "Notion-Version": notionVersion,
         },
+        cache: "force-cache",
         next: {
           revalidate: 60,
         },

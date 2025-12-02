@@ -28,7 +28,7 @@ export default async function Home() {
         <Hero user={user} />
       </Suspense>
       <Suspense key={skills?.request_id}>
-        <BookCall skills={skills?.results} />
+        <BookCall user={user} skills={skills?.results} />
       </Suspense>
       <Suspense key={projects?.request_id}>
         <CurrentProject projects={projects?.results} />
