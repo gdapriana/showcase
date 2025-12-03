@@ -7,7 +7,7 @@ const notionVersion: string = process.env.NEXT_PUBLIC_NOTION_VERSION!;
 const notionEndpoint: string = process.env.NEXT_PUBLIC_NOTION_ENDPOINT!;
 
 export class ProjectRequest {
-  static async GETS(): Promise<NotionDatabaseQueryResponse | null> {
+  static async GETS(count: number = 6): Promise<NotionDatabaseQueryResponse | null> {
     try {
       const response = await fetch(`${notionEndpoint}/databases/${dbID.projects}/query`, {
         method: "POST",
@@ -23,10 +23,10 @@ export class ProjectRequest {
               contains: activeUser,
             },
           },
-          page_size: 6,
+          page_size: count,
         }),
         next: {
-          revalidate: 120,
+          revalidate: 60,
         },
       });
       const data = await response.json();

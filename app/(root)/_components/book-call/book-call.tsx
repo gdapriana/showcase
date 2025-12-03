@@ -35,15 +35,6 @@ export default function BookCall({ user, skills }: { user?: NotionPageResponse; 
           <p className="text-md text-muted-foreground text-center">{user?.properties.description.rich_text[0].plain_text}</p>
 
           <TextParalax cursorActive={{ value: cursorActive, setValue: setCursorActive }} skills={skills} />
-
-          <motion.div animate={isInView ? { y: 0 } : { y: 200 }} transition={{ ease: ease, duration: 1 }} className="flex justify-center gap-2 mt-4 items-center">
-            <Button variant="default" asChild>
-              <Link href="#social">Let`s Connect</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="#message">Book a Call</Link>
-            </Button>
-          </motion.div>
         </motion.div>
       </motion.main>
     </div>

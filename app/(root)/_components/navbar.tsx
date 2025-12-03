@@ -2,16 +2,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { NavType } from "@/utils/types/customTypes";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaMailBulk, FaMailchimp, FaWhatsapp } from "react-icons/fa";
 import ThemeSwitcher from "@/app/(root)/_components/theme-switcher";
+import { Mail } from "lucide-react";
 
 const navs: NavType[] = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
-  { name: "Experiences", href: "/experiences" },
 ];
 
-export default function Navbar({ logo }: { logo?: string | null }) {
+export default function Navbar({ logo, email }: { logo?: string | null; email?: string | null }) {
   return (
     <header className="fixed top-5 z-999 px-4 w-full flex justify-center items-center">
       <div className="flex relative justify-between p-2 items-center bg-background max-w-[800px] rounded-full w-full border-[0.5px]">
@@ -30,8 +30,8 @@ export default function Navbar({ logo }: { logo?: string | null }) {
         <div className="flex z-20 gap-1 justify-center items-center">
           <ThemeSwitcher />
           <Button asChild size="icon" className="cursor-pointer">
-            <Link href="">
-              <FaWhatsapp />
+            <Link href={`mailto:${email}` || "gedeapriana36@gmail.com"}>
+              <Mail />
             </Link>
           </Button>
         </div>
