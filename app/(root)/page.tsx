@@ -23,7 +23,7 @@ export default async function Home() {
   const [skills, projects, tools, socials] = await Promise.all([SkillRequest.GETS(), ProjectRequest.GETS(), ToolRequest.GETS(), SocialRequest.GETS()]);
 
   return (
-    <div>
+    <div className="z-20">
       <Suspense key={user.id}>
         <Hero user={user} />
       </Suspense>

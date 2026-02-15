@@ -22,12 +22,12 @@ export default function BookCall({ user, skills }: { user?: NotionPageResponse; 
   return (
     <div className="relative">
       <CustomCursor isActive={cursorActive} />
-      <motion.main animate={isInView ? { opacity: 1 } : { opacity: 0 }} className="w-full bg-background px-4 relative flex justify-center items-center">
+      <motion.main animate={isInView ? { opacity: 1 } : { opacity: 0 }} className="w-full px-4 relative flex justify-center items-center">
         <motion.div
           ref={ref}
           whileInView={{ opacity: [0, 1], y: [0, 1] }}
           transition={{ duration: 2, ease: ease }}
-          className="max-w-[800px] opacity-0 py-24 relative w-full flex flex-col gap-2 justify-center items-center"
+          className="max-w-[800px] opacity-0 mix-blend-difference py-24 relative w-full flex flex-col gap-2 justify-center items-center"
         >
           <h2 className="text-3xl text-center capitalize md:leading-14 md:text-5xl font-bold md:tracking-[-3px] tracking-[-1px]">
             With {user?.properties.experience.number} Years of Experience Building Meaningful Digital Solutions

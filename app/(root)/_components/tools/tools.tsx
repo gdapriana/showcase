@@ -18,7 +18,7 @@ export default function Tools({ tools }: { tools?: NotionPage[] }) {
   return (
     <div className="relative">
       <CustomCursor isActive={cursorActive} />
-      <motion.main animate={isInView ? { opacity: 1 } : { opacity: 0 }} className="w-full bg-background px-4 relative flex flex-col justify-center items-center">
+      <motion.main animate={isInView ? { opacity: 1 } : { opacity: 0 }} className="w-full px-4 relative flex flex-col justify-center items-center">
         <motion.div
           ref={ref}
           whileInView={{ opacity: [0, 1], y: [0, 1] }}
