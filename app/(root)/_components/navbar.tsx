@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { NavType } from "@/utils/types/customTypes";
-import { FaMailBulk, FaMailchimp, FaWhatsapp } from "react-icons/fa";
 import ThemeSwitcher from "@/app/(root)/_components/theme-switcher";
 import { Mail } from "lucide-react";
 

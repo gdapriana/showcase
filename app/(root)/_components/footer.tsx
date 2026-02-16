@@ -2,7 +2,7 @@ import { NotionPageResponse } from "@/utils/types/notionPage.type";
 
 export default function Footer({ user }: { user: NotionPageResponse | null }) {
   return (
-    <footer className="sticky z-1 bottom-0 bg-primary flex justify-center items-center px-4">
+    <footer className="sticky bottom-0 bg-primary flex justify-center items-center px-4">
       <div className="max-w-[800px] bg-primary rounded-2xl md:py-16 py-10 relative w-full flex flex-col gap-2 justify-center items-center">
         <div className="flex gap-8 border-b border-muted-foreground/20 pb-10 w-full flex-col md:flex-row justify-start items-start md:justify-between md:items-start">
           <div className="flex gap-1 flex-col justify-start items-start">
