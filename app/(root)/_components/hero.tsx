@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Hero({ user }: { user?: NotionPageResponse | null }) {
   const { scrollYProgress } = useScroll();
-  const [isImageError, setIsImageError] = useState<boolean>(false);
+  const [isImageError] = useState<boolean>(false);
   const dynamicWidth = useTransform(scrollYProgress, [0, 1], ["15rem", "40rem"]);
 
   return (
@@ -19,16 +19,6 @@ export default function Hero({ user }: { user?: NotionPageResponse | null }) {
             <Image src={"/profile-image.jpg"} alt="profile" width={400} height={400} loading="lazy" unoptimized className="w-full grayscale h-full object-cover" />
           ) : (
             <Image src={"/profile-image.jpg"} alt="profile" width={400} height={400} loading="lazy" unoptimized className="w-full grayscale h-full object-cover" />
-            // <Image
-            //   onError={() => setIsImageError(true)}
-            //   src={user?.properties.profile_img.files[0].file?.url || "/profile-image.jpg"}
-            //   alt="profile"
-            //   loading="lazy"
-            //   width={400}
-            //   height={400}
-            //   unoptimized
-            //   className="w-full grayscale h-full object-cover"
-            // />
           )}
           <div className="flex absolute left-0 gap-1 md:top-[20%] top-[5%] flex-col justify-start items-start">
             <motion.span animate={{ opacity: [0, 1] }} transition={{ duration: 1, ease: ease, delay: 2 }} className="text-primary dark:text-primary md:mix-blend-screen">

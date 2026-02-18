@@ -26,8 +26,9 @@ export class ProjectRequest {
           page_size: count,
         }),
         next: {
-          revalidate: 60,
+          revalidate: 0,
         },
+        cache: "no-store"
       });
       const data = await response.json();
 

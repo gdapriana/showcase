@@ -6,6 +6,8 @@ import { Toaster } from "sonner";
 import TransitionProvider from "@/providers/transition-provider";
 import { Suspense } from "react";
 import { ThemeProvider } from "@/providers/theme-provider";
+import {QueryClient} from "@tanstack/query-core";
+import QueryProvider from "@/utils/context/query.provider";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -17,6 +19,7 @@ export const metadata: Metadata = {
   description: "gedeapriana",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${dmSans.className} antialiased`}>
+      <QueryProvider>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={null}>
             <SmoothScroller />
@@ -32,6 +36,7 @@ export default function RootLayout({
           <TransitionProvider>{children}</TransitionProvider>
           <Toaster position="bottom-center" />
         </ThemeProvider>
+      </QueryProvider>
       </body>
     </html>
   );

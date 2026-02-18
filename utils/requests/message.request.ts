@@ -1,7 +1,7 @@
 export class MessageRequest {
   static async POST(body: { name: string; email: string; message: string }) {
     try {
-      const response = await await fetch("/api/messages", {
+      const response = await fetch("/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
