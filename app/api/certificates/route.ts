@@ -30,10 +30,8 @@ export async function GET() {
       cache: "no-store"
     });
     const data = await response.json();
-    if (data.status === 400 || data.status === 401 || data.status === 403 || data.status === 404) return null;
     return NextResponse.json(data);
   } catch (e) {
-    console.error(e);
     return NextResponse.json(
       { error: "Failed to fetch Notion data" },
       { status: 500 }
