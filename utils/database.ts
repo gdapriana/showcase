@@ -9,4 +9,5 @@ export const dbID = {
   companies: "2b88caf9feb6800fa630de44f3379c17",
   messages: "2ba8caf9feb680aba721dca27781ea7a",
   tools: "2ba8caf9feb680f8bb3cd6f06da24b6a",
+  products: "30d8caf9feb6800ba56dd3ce5e8e4f4c",
 };
