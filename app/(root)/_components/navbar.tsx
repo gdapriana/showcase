@@ -11,33 +11,16 @@ const navs: NavType[] = [
   { name: "Products", href: "/products" },
 ];
 
-export default function Navbar({
-  logo,
-  email,
-}: {
-  logo?: string | null;
-  email?: string | null;
-}) {
+export default function Navbar({ logo, email }: { logo?: string | null; email?: string | null }) {
   return (
     <header className="fixed top-5 z-999 px-4 w-full flex justify-center items-center">
-      <div className="flex relative justify-between p-2 items-center bg-background max-w-[800px] rounded-full w-full border-[0.5px]">
+      <div className="flex relative justify-between p-2 items-center bg-background max-w-[1200px] rounded-full w-full border-[0.5px]">
         <Link className="font-semibold z-20" href="/">
-          <Image
-            src={"/brand.png"}
-            alt="logo"
-            className="h-10 w-10"
-            width={100}
-            height={100}
-            loading="lazy"
-          />
+          <Image src={"/brand.png"} alt="logo" className="h-10 w-10" width={100} height={100} loading="lazy" />
         </Link>
         <div className="hidden z-10 absolute w-full left-0 md:flex justify-center items-center gap-8">
           {navs.map((nav: NavType, key: number) => (
-            <a
-              className="uppercase text-xs overflow-hidden font-semibold"
-              key={key}
-              href={nav.href}
-            >
+            <a className="uppercase text-xs overflow-hidden font-semibold" key={key} href={nav.href}>
               <div className="relative">
                 <span className="top-0 left-0">{nav.name}</span>
               </div>

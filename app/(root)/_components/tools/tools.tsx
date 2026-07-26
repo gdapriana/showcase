@@ -23,7 +23,7 @@ export default function Tools({ tools }: { tools?: NotionPage[] }) {
           ref={ref}
           whileInView={{ opacity: [0, 1], y: [0, 1] }}
           transition={{ duration: 2, ease: ease }}
-          className="max-w-[800px] opacity-0 py-24 relative w-full flex flex-col gap-2 justify-center items-center"
+          className="max-w-[1200px] opacity-0 py-24 relative w-full flex flex-col gap-2 justify-center items-center"
         >
           <h2 className="text-3xl text-center capitalize md:leading-14 md:text-5xl font-bold md:tracking-[-3px] tracking-[-1px]">The Tools Behind the Craft</h2>
           <p className="text-md text-muted-foreground text-center">Design, planning, and coding tools I work with.</p>

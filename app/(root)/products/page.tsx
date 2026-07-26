@@ -8,8 +8,6 @@ import Link from "next/link";
 export default function page() {
   const products = useQueryProducts();
 
-  console.log({ data: products.data });
-
   return (
     <div className="w-full z-20 flex-col px-4 relative flex justify-start items-center">
       <div className="max-w-[800px] py-28 relative w-full flex flex-col gap-8 justify-center items-center">

@@ -5,8 +5,8 @@ import SplitType from "split-type";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { NotionPage } from "@/utils/types/notionDatabaseQuery.type";
-import SocialCard from "@/app/(root)/_components/media-socials.tsx/social-card";
-import CustomCursor from "@/app/(root)/_components/media-socials.tsx/custom-cursor";
+import SocialCard from "@/app/(root)/_components/media-socials/social-card";
+import CustomCursor from "@/app/(root)/_components/media-socials/custom-cursor";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function MediaSocials({ socials }: { socials?: NotionPage[] }) {
@@ -62,7 +62,7 @@ export default function MediaSocials({ socials }: { socials?: NotionPage[] }) {
     <div className="relative" id="social">
       <CustomCursor isActive={cursorActive} />
       <main className="w-full px-4 relative flex flex-col justify-center items-center">
-        <div ref={containerRef} className="max-w-[800px] bg-primary dark:bg-background dark:border-[0.5px] rounded-2xl md:p-16 p-10 relative w-full flex flex-col gap-2 justify-center items-center">
+        <div ref={containerRef} className="max-w-[1200px] bg-primary dark:bg-background dark:border-[0.5px] rounded-2xl md:p-16 p-10 relative w-full flex flex-col gap-2 justify-center items-center">
           <h2 ref={textRef} className="text-3xl md:text-3xl font-bold tracking-[-2px] text-background">
             Great collaborations begin with a message. Feel free to reach out through the channels below — I’m always open to new conversations.
           </h2>

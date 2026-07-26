@@ -16,7 +16,7 @@
     "@radix-ui/react-slot": "^1.2.4",
     "@studio-freight/lenis": "^1.0.42",
     "@studio-freight/tempus": "^0.0.44",
-    "@tanstack/react-query": "^5.90.21",
+    "@tanstack/react-query": "^5.101.2",
     "@tanstack/react-query-devtools": "^5.91.3",
     "axios": "^1.13.5",
     "class-variance-authority": "^0.7.1",

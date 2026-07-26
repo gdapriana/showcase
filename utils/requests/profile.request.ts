@@ -25,7 +25,6 @@ export class ProfileRequest {
       if (data.status === 400 || data.status === 401 || data.status === 403 || data.status === 404) return null;
       return data;
     } catch (error) {
-      console.error(error);
       return null;
     }
   }

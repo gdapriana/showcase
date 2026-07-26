@@ -10,7 +10,7 @@ import { ProjectRequest } from "@/utils/requests/project.request";
 import MessageForm from "@/app/(root)/_components/message-form/message-form";
 import { ToolRequest } from "@/utils/requests/tool.request";
 import Tools from "@/app/(root)/_components/tools/tools";
-import MediaSocials from "@/app/(root)/_components/media-socials.tsx/media-socials";
+import MediaSocials from "@/app/(root)/_components/media-socials/media-socials";
 import { SocialRequest } from "@/utils/requests/social.request";
 
 export default async function Home() {

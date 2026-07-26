@@ -14,7 +14,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
   return (
     <main className="flex flex-col justify-start items-stretch">
       <div className="z-10 bg-background relative flex flex-col justify-start items-stretch">
-        <SVG />
+        {/* <SVG /> */}
         <Navbar email={user?.properties.email.rich_text[0].plain_text} logo={user?.properties.logo.files[0].file?.url} />
         {children}
       </div>
