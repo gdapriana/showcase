@@ -8,7 +8,7 @@ export default function Wrapper({ items }: { items?: NotionPage[] | null }) {
   return (
     <div className="w-full flex-col px-4 relative flex justify-start items-center">
       <div className="max-w-[1200px] py-28 relative w-full flex flex-col gap-8 justify-center items-center">
-        <div className="columns-2 md:columns-2 gap-x-2 gap-y-2 ">{items && items.map((project: NotionPage, index: number) => <ProjectCard index={index} project={project} key={project.id} />)}</div>
+        <div className="grid grid-cols-2 gap-4">{items && items.map((project: NotionPage, index: number) => <ProjectCard index={index} project={project} key={project.id} />)}</div>
       </div>
       <div className="p-8 z-20">
         <Button asChild>
